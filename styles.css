@@ -10,6 +10,10 @@
 :root{
     font-size: 16px;
 }
+
+body{
+    overflow-x: hidden;
+}
 .showcase {
   position: relative;
   right: 0;
@@ -311,7 +315,7 @@ section .wave.wave4{
     color: #0050A1;
     transition: 3s ease;
     transition-delay: 1s;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .fact-text{
