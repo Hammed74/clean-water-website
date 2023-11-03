@@ -330,6 +330,8 @@ section .wave.wave4{
 .third-page{
     background-color: #0050A1;
     padding-bottom: 20px;
+     transition: 3s ease;
+    transition-delay: 1s;
 }
 
 h1{
@@ -375,8 +377,9 @@ h1{
 
 .card{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content:flex-start;
     width: 300px;
     height: 400px;
     background-color: white;
@@ -391,26 +394,71 @@ h1{
 }
 
 .toilet{
+    position: relative;
     transition: 0.5s ease-in-out;
+    margin-top: 75px;
 }
 .toilet-card:hover .toilet{
     transform: translateY(-350px);
 }
 
+.toilet-card:hover .toilet-fact{
+    transform: translateY(-450px);
+}
+.toilet-fact{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    position: relative;
+    bottom: -200px;
+    transition: 0.5s ease-in-out;
+    padding: 0px 20px;
+    color: #0050A1;
+}
 .people{
     transition: 0.5s ease-in-out;
+    margin-top: 75px;
 }
 .people-card:hover .people{
     transform: translateY(-350px);
 }
-
+.people-card:hover .people-fact{
+    transform: translateY(-450px);
+}
+.people-fact{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    position: relative;
+    bottom: -210px;
+    transition: 0.5s ease-in-out;
+    padding: 0px 20px;
+    color: #0050A1;
+}
 .school{
     transition: 0.5s ease-in-out;
+    margin-top: 75px;
 }
 .school-card:hover .school{
     transform: translateY(-350px);
 }
+.school-fact{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    position: relative;
+    bottom: -220px;
+    transition: 0.5s ease-in-out;
+    padding: 0px 20px;
+    color: #0050A1;
+}
 
+.school-card:hover .school-fact{
+    transform: translateY(-450px);
+}
 @keyframes hover{
     0%{
         transform: translateY(0);
@@ -423,3 +471,10 @@ h1{
         transform: translateY(0);
     }
 }
+
+footer{
+    color: white;
+    text-align: center;
+    margin-top: 100px
+}
+

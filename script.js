@@ -16,6 +16,7 @@ const ballsGroup = document.querySelector(".balls-group")
 const createdBalls = [];
 const cards = document.querySelectorAll(".card")
 const cardGroup = document.querySelector(".card-group")
+const thirdPage = document.querySelector(".third-page")
 
 cards.forEach((card) => {
     card.addEventListener("mouseover", () => {
@@ -32,8 +33,12 @@ cards.forEach((card) => {
 
 
 function generateBall(num) {
+
+    const visibleBalls = Array.from(ballsGroup.children).filter(ball => getComputedStyle(ball).opacity > 0);
+
+  if (visibleBalls.length === 0) {
   for (i = 0; i < num; i++) {
-    const randomBallSize = Math.floor(Math.random() * 71 + 15);
+    const randomBallSize = Math.floor(Math.random() * 71 + 10);
     const balls = document.createElement("div");
     balls.classList.add("balls");
     balls.style.width = randomBallSize + "px";
@@ -42,12 +47,13 @@ function generateBall(num) {
     createdBalls.push(balls);
   }
 }
+}
 
-generateBall(25);
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
     if (entry.isIntersecting){
         fact.style.color = "#667500";
+        thirdPage.style.backgroundColor = "#854822";
         wave1.style.backgroundImage = "url(assets/brown-wave.png)";
         wave2.style.backgroundImage = "url(assets/brown-wave.png)";
         wave3.style.backgroundImage = "url(assets/brown-wave.png)";
@@ -62,19 +68,23 @@ const observer = new IntersectionObserver((entries) => {
         wave2.style.transition = "";
         wave3.style.transition = "";
         wave4.style.transition = "";
+        thirdPage.style.transition = ""
        
 })
     }else{
+        generateBall(35)
         fact.style.transition = "0.9s"
          wave1.style.transition = "0.6s";
          wave2.style.transition = "0.6s";
          wave3.style.transition = "0.6s";
          wave4.style.transition = "0.6s";
+         thirdPage.style.transition = "0.6s"
         fact.style.color = "";
         wave1.style.backgroundImage = "";
         wave2.style.backgroundImage = "";
         wave3.style.backgroundImage = "";
         wave4.style.backgroundImage = "";
+        thirdPage.style.backgroundColor = ""
     }
 });
 });
